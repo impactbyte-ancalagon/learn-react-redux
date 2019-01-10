@@ -4,7 +4,7 @@ class FastTodoApp extends Component {
   render() {
     return (
       <div>
-        <h1>Good App</h1>
+        <h1>Fast Todo App</h1>
       </div>
     )
   }
