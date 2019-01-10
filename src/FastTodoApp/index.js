@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import { createStore } from "redux"
 import { Provider } from "react-redux"
+import { devToolsEnhancer } from "redux-devtools-extension"
 
 import TodoForm from "./TodoForm"
 import TodoList from "./TodoList"
@@ -52,11 +53,10 @@ const reducer = (store = initialStore, action) => {
 
 const reduxStore = createStore(
   reducer,
-  // Add Redux DevTools Extension
-  // https://github.com/zalmoxisus/redux-devtools-extension#11-basic-store
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  devToolsEnhancer({
+    name: "Fast Todo App"
+  })
 )
-
 class FastTodoApp extends Component {
   render() {
     return (

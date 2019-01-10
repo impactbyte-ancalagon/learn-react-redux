@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 
 import SlowTodoApp from "./SlowTodoApp"
+import SimpleRedux from "./SimpleRedux"
 import FastTodoApp from "./FastTodoApp"
 
 class App extends Component {
@@ -8,6 +9,7 @@ class App extends Component {
     return (
       <main>
         <SlowTodoApp />
+        <SimpleRedux />
         <FastTodoApp />
       </main>
     )
