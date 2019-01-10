@@ -1,9 +1,9 @@
 import React from "react"
 import { connect } from "react-redux"
 
-class TodoForm extends React.Component {
-  changeText = event => {
-    this.props.dispatch({
+const TodoForm = props => {
+  const changeText = event => {
+    props.dispatch({
       type: "CHANGE_TEXT",
       payload: {
         text: event.target.value
@@ -11,32 +11,30 @@ class TodoForm extends React.Component {
     })
   }
 
-  clearText = () => {
-    this.props.dispatch({ type: "CLEAR_TEXT" })
+  const clearText = () => {
+    props.dispatch({ type: "CLEAR_TEXT" })
   }
 
-  submitText = () => {
-    this.props.dispatch({ type: "SUBMIT_TEXT" })
+  const submitText = () => {
+    props.dispatch({ type: "SUBMIT_TEXT" })
   }
 
-  render() {
-    return (
-      <form
-        onSubmit={event => {
-          event.preventDefault()
-          this.submitText()
-          this.clearText()
-        }}
-      >
-        <input
-          type="text"
-          placeholder="What to do?"
-          onChange={this.changeText}
-          value={this.props.text}
-        />
-      </form>
-    )
-  }
+  return (
+    <form
+      onSubmit={event => {
+        event.preventDefault()
+        submitText()
+        clearText()
+      }}
+    >
+      <input
+        type="text"
+        placeholder="What to do?"
+        onChange={changeText}
+        value={props.text}
+      />
+    </form>
+  )
 }
 
 const mapStateToProps = store => {
