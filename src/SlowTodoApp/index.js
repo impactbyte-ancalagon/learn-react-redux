@@ -1,7 +1,14 @@
 import React, { Component } from "react"
+import styled from "styled-components"
 
 import TodoForm from "./TodoForm"
 import TodoList from "./TodoList"
+
+const StyledApp = styled.div`
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid red;
+`
 
 class SlowTodoApp extends Component {
   state = {
@@ -32,11 +39,11 @@ class SlowTodoApp extends Component {
 
   render() {
     return (
-      <div>
+      <StyledApp>
         <h1>Slow Todo App</h1>
         <TodoForm handleSubmit={this.handleSubmit} />
         <TodoList todos={this.state.todos} />
-      </div>
+      </StyledApp>
     )
   }
 }
