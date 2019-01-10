@@ -12,17 +12,8 @@ const StyledApp = styled.div`
 
 class SlowTodoApp extends Component {
   state = {
-    latestId: 2,
-    todos: [
-      {
-        id: 0,
-        text: "Sample A"
-      },
-      {
-        id: 1,
-        text: "Sample B"
-      }
-    ]
+    latestId: 0,
+    todos: []
   }
 
   handleSubmit = newText => {
